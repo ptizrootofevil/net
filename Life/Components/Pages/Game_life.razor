@@ -1,0 +1,23 @@
+@page "/Life"
+
+<PageTitle>Life</PageTitle>
+
+<h1>Game of life</h1>
+
+<table class="grid-table">
+    @for (int row = 0; row < 25; row++)
+    {
+        <tr>
+            @for (int col = 0; col < 40; col++)
+            {
+                <td>
+                    <button class="@GetButtonClass(row, col)" 
+                            @onclick="() => ToggleValue(row, col)">
+                        @(boolMatrix[row, col] ? "✓" : " ")
+                    </button>
+                </td>
+            }
+        </tr>
+    }
+</table>
+
