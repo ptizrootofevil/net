@@ -15,7 +15,7 @@
                         int currentRow = row;
                         int currentCol = col;
                         <td>
-                            <button class="grid-cell @(grid[row,col] ? "alive" : "dead")"
+                            <button class="grid-cell @(grid[row,col].IsAlive ? "alive" : "dead")"
                                     @onclick="@(() => ChangeCell(currentRow, currentCol))"
                                     @key="(row,col)">
                             </button>
