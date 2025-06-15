@@ -1,14 +1,52 @@
+/* Game of Life Grid CSS */
+.grid-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
 .grid-table {
     border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 auto;
+    border: 2px solid #333;
 }
 
 .grid-table td {
     padding: 0;
+    margin: 0;
+    line-height: 0;
 }
 
-.grid-table button {
-    width: 30px;
-    height: 30px;
-    margin: 1px;
-    border: 1px solid #ccc;
+.grid-cell {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: 1px solid #333; /* Very thin border for grid lines */
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+/* Alive cell */
+.grid-cell.alive {
+    background-color: #ff0000; /* Bright red */
+}
+
+/* Dead cell */
+.grid-cell.dead {
+    background-color: #000000; /* Pure black */
+}
+
+/* Hover effect */
+.grid-cell:hover {
+    opacity: 0.8;
+}
+
+/* Remove button styling */
+.grid-cell {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }

@@ -1,28 +1,30 @@
 @page "/Life"
 @rendermode InteractiveServer
 
-<h1>Boolean Matrix Grid</h1>
+<h1>Game of life</h1>
 
 @if (initialized)
 {
-    <table class="grid-table">
-        @for (int row = 0; row < rows; row++)
-        {
-            <tr>
-                @for (int col = 0; col < cols; col++)
-                {
-                    int currentRow = row;
-                    int currentCol = col;
-                    <td>
-                        <button class="grid-cell"
-                                style="@GetCellStyle(currentRow, currentCol)"
-                                @onclick="@(() => ToggleValue(currentRow, currentCol))">
-                        </button>
-                    </td>
-                }
-            </tr>
-        }
-    </table>
+    <div class="grid-container">
+        <table class="grid-table">
+            @for (int row = 0; row < height; row++)
+            {
+                <tr>
+                    @for (int col = 0; col < width; col++)
+                    {
+                        int currentRow = row;
+                        int currentCol = col;
+                        <td>
+                            <button class="grid-cell @(grid[row,col] ? "alive" : "dead")"
+                                    @onclick="@(() => ChangeCell(currentRow, currentCol))"
+                                    @key="(row,col)">
+                            </button>
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
 }
 else
 {
