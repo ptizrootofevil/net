@@ -5,7 +5,8 @@
 
 @if (initialized)
 {
-    <div> <button @onclick='Tick'> Click </button></div>
+    <div> <button @onclick="ToggleTimer"class="btn @(isRunning ? "btn-danger" : "btn-success")">
+    @(isRunning ? "Stop Timer" : "Start Timer") </button></div>
     <div class="grid-container">
         <table class="grid-table">
             @for (int row = 0; row < height; row++)
