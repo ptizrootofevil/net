@@ -52,22 +52,8 @@
 }
 
 .button-container[b-odald3iyvb] {
-    display: flex;       /* Use flexbox for alignment */
-    gap: 10px;          /* Space between buttons */
-    align-items: center; /* Vertically align buttons */
+    display: flex;       
+    gap: 10px;          
+    align-items: center; 
   }
 
-   .btn-danger[b-odald3iyvb] {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  .btn-success[b-odald3iyvb] {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .btn-warning[b-odald3iyvb] {
-    background-color: #ffc107;
-    color: black;
-  }

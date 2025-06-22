@@ -76,5 +76,6 @@ c:\Users\HYPERPC\OneDrive\Документы\code\net\Life\obj\Debug\net9.0\Life
 c:\Users\HYPERPC\OneDrive\Документы\code\net\Life\obj\Debug\net9.0\Life.genruntimeconfig.cache
 c:\Users\HYPERPC\OneDrive\Документы\code\net\Life\obj\Debug\net9.0\ref\Life.dll
 c:\Users\HYPERPC\OneDrive\Документы\code\net\Life\obj\Debug\net9.0\scopedcss\Components\Pages\Game_life.razor.rz.scp.css
-c:\Users\HYPERPC\OneDrive\Документы\code\net\Life\obj\Debug\net9.0\compressed\ocbz9fm5ko-mrq39cva2x.gz
-c:\Users\HYPERPC\OneDrive\Документы\code\net\Life\obj\Debug\net9.0\compressed\gkuatpq9hv-mrq39cva2x.gz
+c:\Users\HYPERPC\OneDrive\Документы\code\net\Life\obj\Debug\net9.0\Life.sourcelink.json
+c:\Users\HYPERPC\OneDrive\Документы\code\net\Life\obj\Debug\net9.0\compressed\ocbz9fm5ko-ys82aagf6w.gz
+c:\Users\HYPERPC\OneDrive\Документы\code\net\Life\obj\Debug\net9.0\compressed\gkuatpq9hv-ys82aagf6w.gz

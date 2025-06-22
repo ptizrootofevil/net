@@ -52,22 +52,8 @@
 }
 
 .button-container {
-    display: flex;       /* Use flexbox for alignment */
-    gap: 10px;          /* Space between buttons */
-    align-items: center; /* Vertically align buttons */
+    display: flex;       
+    gap: 10px;          
+    align-items: center; 
   }
 
-   .btn-danger {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  .btn-success {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .btn-warning {
-    background-color: #ffc107;
-    color: black;
-  }
