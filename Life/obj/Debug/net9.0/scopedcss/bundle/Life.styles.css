@@ -204,17 +204,17 @@ main[b-5q8c62ku95] {
     }
 }
 /* _content/Life/Components/Pages/Game_life.razor.rz.scp.css */
-/* Game of Life Grid CSS */
 .grid-container[b-odald3iyvb] {
     display: flex;
-    justify-content: center;
+    position: static;
+    justify-content: start;
     margin: 20px 0;
+    margin-right: auto;
 }
 
 .grid-table[b-odald3iyvb] {
     border-collapse: collapse;
     border-spacing: 0;
-    margin: 0 auto;
     border: 2px solid #333;
 }
 
@@ -230,29 +230,50 @@ main[b-5q8c62ku95] {
     padding: 0;
     margin: 0;
     border: none;
-    outline: 1px solid #333; /* Very thin border for grid lines */
+    outline: 1px solid #333;
     cursor: pointer;
     transition: background-color 0.1s ease;
 }
 
-/* Alive cell */
+
 .grid-cell.alive[b-odald3iyvb] {
-    background-color: #ff0000; /* Bright red */
+    background-color: #ff0000;
 }
 
-/* Dead cell */
+
 .grid-cell.dead[b-odald3iyvb] {
-    background-color: #000000; /* Pure black */
+    background-color: #000000;
 }
 
-/* Hover effect */
+
 .grid-cell:hover[b-odald3iyvb] {
     opacity: 0.8;
 }
 
-/* Remove button styling */
+
 .grid-cell[b-odald3iyvb] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
+
+.button-container[b-odald3iyvb] {
+    display: flex;       /* Use flexbox for alignment */
+    gap: 10px;          /* Space between buttons */
+    align-items: center; /* Vertically align buttons */
+  }
+
+   .btn-danger[b-odald3iyvb] {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-success[b-odald3iyvb] {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn-warning[b-odald3iyvb] {
+    background-color: #ffc107;
+    color: black;
+  }

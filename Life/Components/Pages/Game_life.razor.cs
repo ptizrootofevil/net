@@ -5,16 +5,14 @@ namespace Life.Components.Pages
 {
     public partial class Game_life
     {
-        private const int height = 25;
-        private const int width = 40;
+        private const int height = 30;
+        private const int width = 60;
         private Cell[,] grid = new Cell[height, width];
         private HashSet<Cell> livingCells = new HashSet<Cell>();
         private HashSet<Cell> potentialCells = new HashSet<Cell>();
         private bool initialized = false;
-        private int generation = 0;
-        private System.Timers.Timer timer;
+        private System.Timers.Timer timer = new System.Timers.Timer(1000);
         private bool isRunning = false;
-        private string lastTickTime;
 
         protected override void OnInitialized()
         {
@@ -27,18 +25,22 @@ namespace Life.Components.Pages
                 }
             }
             initialized = true;
-            timer = new System.Timers.Timer(1000); // 2 second interval
             timer.Elapsed += OnTimerTick;
             timer.AutoReset = true;
         }
-         private async void OnTimerTick(object sender, ElapsedEventArgs e)
+        class Cell
         {
-            await InvokeAsync(() => 
+            public bool IsAlive { get; set; }
+            public int X { get; set; }
+            public int Y { get; set; }
+            public int LivingNeighbours { get; set; }
+            public Cell(int row, int col)
             {
-                Tick(); // Your tick function
-                lastTickTime = DateTime.Now.ToString("HH:mm:ss.fff");
-                StateHasChanged(); // Update UI
-            });
+                this.X = row;
+                this.Y = col;
+                this.IsAlive = false;
+                this.LivingNeighbours = 0;
+            }
         }
         private void ChangeCell(int row, int col)
         {
@@ -56,34 +58,41 @@ namespace Life.Components.Pages
                 Console.WriteLine($"Error toggling value: {ex.Message}");
             }
         }
+         private async void OnTimerTick(object sender, ElapsedEventArgs? e)
+        {
+            await InvokeAsync(() =>
+            {
+                Tick();
+                StateHasChanged();
+            });
+        }
+        
 
         private void ToggleTimer()
         {
             if (isRunning)
             {
-                timer.Stop();
+                this.timer.Stop();
             }
             else
             {
-                timer.Start();
+                this.timer.Start();
             }
             isRunning = !isRunning;
         }
 
-        class Cell
+        private void ResetGrid()
         {
-            public bool IsAlive { get; set; }
-            public int X { get; set; }
-            public int Y { get; set; }
-            public int LivingNeighbours { get; set; }
+            if (isRunning) ToggleTimer();
 
-            public Cell(int row, int col)
+            for (int row = 0; row < height; row++)
             {
-                this.X = row;
-                this.Y = col;
-                this.IsAlive = false;
-                this.LivingNeighbours = 0;
+                for (int col = 0; col < width; col++)
+                {
+                    grid[row, col].IsAlive = false;
+                }
             }
+            livingCells.Clear();
         }
 
         private void Tick()
@@ -152,7 +161,6 @@ namespace Life.Components.Pages
                     cell.LivingNeighbours = 0;
                 }
                 potentialCells.Clear();
-                this.generation += 1;
             }
         }
     }
